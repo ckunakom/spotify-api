@@ -1,0 +1,11 @@
+.filters {
+    margin-top: 10px;
+  }
+  
+table, .table {
+    font-size: 12px;
+  }
+
+.thead-long {
+    width: 120px;
+}
