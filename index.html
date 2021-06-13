@@ -33,6 +33,7 @@
     <div class="container">
         <div class="row pt-3">
             <h3>My Top 50 Most Listened Tracks</h3>
+            <h6 id="result"></h6>
             <div class="col-md-2">
                 <aside class="filters">
                 <div class="panel panel-default">
@@ -41,6 +42,11 @@
                     <form>
                         <div class="form-group">
                         <ul class="list-group" id="filters">
+                            <li class="filter list-group-item">
+                                <label for="song-title">Enter a song title</label>
+                                <input class="form-control" id="song-title" type="text" placeholder="anima">
+                            </li>
+
                             <!-- <li class="filter list-group-item">
                             <label for="date">Enter a date</label>
                             <input class="form-control" id="datetime" type="text" placeholder="1/11/2010">

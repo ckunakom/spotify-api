@@ -9,3 +9,7 @@ table, .table {
 .thead-long {
     width: 120px;
 }
+
+#result {
+  font-size: 12px;
+}
