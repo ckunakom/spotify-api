@@ -12,4 +12,4 @@ I just want to brush up on my skills on using API requests using python. As usua
 ## Methodology
 Data Mining with Python: 
 - I didn't quite understand the Spotify API documentation so I googlged around and got an idea from the following github (https://stmorse.github.io/journal/spotify-api.html). 
-- My bestie also slowly walked me through the entire Authorization Flow process to help me understand each step (Thank you, Dorfnox🙏🏻)
+- My bestie also slowly walked me through the entire Authorization Flow process to help me understand each step (thank you, Dorfnox🙏🏻)

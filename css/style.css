@@ -1,15 +1,20 @@
-.filters {
+#filters {
     margin-top: 10px;
   }
   
 table, .table {
-    font-size: 12px;
-  }
+    font-size: 13px;
+} 
 
 .thead-long {
     width: 120px;
 }
 
 #result {
-  font-size: 12px;
+  font-size: 0.9375rem;
+}
+
+.search {
+  color: #ebebeb;
+  font-size: 14px;
 }

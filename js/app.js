@@ -13,13 +13,14 @@ d3.json("./data/clean_top_tracks.json").then(function(trackData) {
         // D3: append `tr` for each trackData object
         var row = tbody.append("tr");
         // Append `td` to the row for each value in JSON and append each cell
-        row.append("td").text(data.title);
+        // row.append("td").text(data.title);
+        row.append("td").html(`<a href="${data.song_url}">${data.title}</a>`);
         row.append("td").text(data.artists_name);
         row.append("td").text(data.album_name);
         row.append("td").text(data.release_date);
         row.append("td").text(data.duration_min);
         row.append("td").text(data.popularity);
-        row.append("td").html(`<a href="${data.song_url}">${data.song_url}</a>`);
+        // row.append("td").html(`<a href="${data.song_url}">${data.song_url}</a>`);
 
     });
 
@@ -36,73 +37,91 @@ d3.json("./data/clean_top_tracks.json").then(function(trackData) {
 console.log(error);
 });
 
-// --------------- Creating Search Box --------------- //
-// Select the form & filter button
-var form = d3.select("form");
-var button = d3.select("#filter-btn");
+//---------- THANK YOU DORFNOX for the tutoring below ---------- //
+// Search with multiple input
+// -- 1. Figure out how to get text element for each search input
+// -- 2. Figure out how do we architect the passing logic - passing logic should take into account whether user should provide value or not
+function search() {
+    var inputTitle, inputArtist, inputDate, table, tr, tdElements, i, count;
+    inputTitle = document.getElementById("song-title").value.toUpperCase();
+    inputArtist = document.getElementById("artist").value.toUpperCase();
+    inputDate = document.getElementById("date-release").value;
 
-// Create event handlers 
-form.on("submit", filterEvent);
-button.on("click", filterEvent);
+    table = document.getElementById("song-table");
+    tr = Array.from(table.getElementsByTagName("tr")).slice(1);
+    console.log(tr);
+    count = 0;
 
-// Complete the event handler function for the form
-function filterEvent() {
-    // Prevent the page from refreshing
-    d3.event.preventDefault();
+    for (i = 0; i < tr.length; i++) {
+        tdElements = tr[i].getElementsByTagName("td");
+        console.log(tdElements);
+        console.log(tr);
+        tdTitle = tdElements[0].textContent ||  tdElements[0].innerText;
+        tdArtist = tdElements[1].textContent ||  tdElements[1].innerText;
+        tdDate = tdElements[3].textContent ||  tdElements[3].innerText;
+        
+        // Whether there's input or not, pass will be true
+        var pass = true;
 
-    // Select the input element and get the raw HTML node; then get value property of input element
-    var inputTitle = d3.select("#song-title");
-    var inputTitleValue = inputTitle.property("value"); // let's lowercase the input too
+        if (pass && inputTitle) {            
+            pass = compare(tdTitle, inputTitle);
+        }
 
-};
+        if (pass && inputArtist) {
+            pass = compare(tdArtist, inputArtist);
+        }
+        
+        if (pass && inputDate) {
+            pass = compare(tdDate, inputDate);
+        }
 
-// Homework solution -------------------------------------------------------------
+        if (pass) {
+            tr[i].style.display = "";
+            count = count + 1;  
+        }
+        else {
+            tr[i].style.display = "none";
+        }
+        
+    }
+    updateResult(count);
+}
 
-// // Keep track of all filters
-// var filters = {};
+// Compare if input from user is in text element
+function compare(string1, string2) {
+    return string1.toUpperCase().includes(string2.toUpperCase());
+}
 
-// function updateFilters() {
+// Update result numbers
+function updateResult(count) {
+    var result = `There are ${count} result(s).`;
+    document.getElementById("result").innerHTML = result;
+} 
 
-//     // Save the element, value, and id of the filter that was changed
-//     var changedElement = d3.select(this).select("input");
-//     var elementValue = changedElement.property("value");
-//     var filterId = changedElement.attr("id");
+// Create search list -- Thank you w3schools.com <3 //
+// // Search with title
+// function searchTitle() {
+//     var input, filter, table, tr, td, i, txtValue, count;
+//     input = document.getElementById("song-title");
+//     filter = input.value.toUpperCase();
+//     table = document.getElementById("song-table");
+//     tr = table.getElementsByTagName("tr");
+//     count = 0;
 
-//     // If a filter value was entered then add that filterId and value to the filters list
-//     if (elementValue) {
-//         filters[filterId] = elementValue;
+//     for (i = 0; i < tr.length; i++) {
+//         td = tr[i].getElementsByTagName("td")[0];
+        
+//         if (td) {
+//             txtValue = td.textContent || td.innerText;
+//             if (txtValue.toUpperCase().indexOf(filter) > -1) {
+//                 tr[i].style.display = "";
+//                 count = count + 1;
+//                 console.log(count);               
+//             }
+//             else {
+//                 tr[i].style.display = "none";
+//             }
+//         }    
+        
 //     }
-//     // Otherwise, clear that filter from the filters object
-//     else {
-//         delete filters[filterId];
-//     }
-
-//     // Call function to apply all filters and rebuild the table
-//     filterTable()
-
 // }
-
-// function filterTable() {
-
-//     // Set the filteredData to the tableData
-//     let filteredData = tableData;
-
-//     // Loop through all of the filters and keep any data that matches the filter values
-//     Object.entries(filters).forEach(([key, value]) => {
-//         filteredData = filteredData.filter(row => row[key] === value);
-//     });
-
-//     // Rebuild the table using the fitlered data
-//     buildTable(filteredData);
-
-// }
-
-// function buildTable () {
-//     // uhhhhhhhhhhhhhhh what goes here....
-// }
-
-// // Attach an event to listen for changes to each filter
-// d3.selectAll(".filter").on("change", updateFilters);
-
-// // Build the table when the page loads
-// buildTable(tableData);
