@@ -1,4 +1,4 @@
-# Dependencies
+# Dependencies -- omg so many...
 import requests
 import json
 import pandas as pd
@@ -9,14 +9,19 @@ from urllib.parse import urlparse
 from urllib.parse import parse_qs
 from urllib.parse import urlencode
 from collections import OrderedDict
+from getpass import getpass
 
- 
+### -------------------------- ###
+### --- AUTHORIZATION FLOW --- ### 
 # https://developer.spotify.com/documentation/general/guides/authorization-guide/#list-of-scopes
 
+### Request User Authorization ###
+### -------------------------- ###
 # Build URL to request user authorization
 redirect_uri = 'https://google.com/callback'
 
 # the scope applicable for Read access to a user's top artists and tracks.
+# https://developer.spotify.com/documentation/web-api/concepts/scopes
 scope = 'user-top-read'
 
 auth_param = {
@@ -33,30 +38,31 @@ url_str = 'https://accounts.spotify.com/authorize?'
 query_string = urlencode(OrderedDict(auth_param))
 auth_url = url_str + query_string 
 
-
+### LET CHROME DRIVER DO THE WORK ###
 # Creating a path for chromedriver on windows
 executable_path = {'executable_path': 'c:/bin/chromedriver.exe'}
 browser = Browser('chrome', **executable_path, headless=False)
 
-
 # launch the url with chrome driver
 browser.visit(auth_url)
+
+# Enter spotify credentials
+user_email = getpass(f'Enter username or email: ')
+user_password = getpass(f'Enter password: ')
 
 # Fill login info (need to get html id for username and password for below)
 browser.find_by_id('login-username').fill(user_email)
 browser.find_by_id('login-password').fill(user_password)
 
-
 # Click the 'Log in' button
 button = browser.find_by_id('login-button')
 button.click()
-
 
 # Click 'Agree' button
 button = browser.find_by_xpath("//button[@data-testid='auth-accept']")
 button.click()
 
-# Print the current url
+# Get the current url
 logged_in_url = browser.url
 
 # url for spotify api
@@ -66,74 +72,38 @@ code_from_url = parse_qs(parsed_url.query)['code'][0]
 # Shut the browser down
 browser.quit()
 
+### CHROME DRIVER SHUT DOWN ###
 
-# CLEANED UP UNTIL HERE --- SAVE POINT!
+### Request Access Token ###
+### -------------------------- ###
 
-# ## Authorization flow
+# Make POST request to Spotify on /api/token endpoint
 
-# Step 1: Request authorization to access data. No code. 
-# - Example Grant access URL:
-# https://accounts.spotify.com/authorize?response_type=code&client_id=5d67ef47a63a42f08feb4c824ee174f7&scope=user-top-read&redirect_uri=https%3A%2F%2Fgoogle.com%2Fcallback&show_dialog=true
-# 
-# Once accept, data can now be requested.
-# 
-# Note: if changing `scope`, this step and step 2 need to be repeated.
-# Scope for the following:
-# - User's Top Artists and Tracks: `user-top-read`
-# - List of a User's Playlists: `playlist-read-private`
-
-# Step 2: Request to get refresh and access token
-# - Make POST request to Spotify on /api/token endpoint
-# - Require parameters specfied accordingly.
-
-# In[14]:
-
-
-# POST - REQUEST BODY PARAMETER, skipping header parameter using alternative way
+# Define required parameter
+request_url = 'https://accounts.spotify.com/api/token'
 request_body_parameter = {
     'grant_type': 'authorization_code',
     'code': code_from_url,
-    'redirect_uri': 'https://google.com/callback',
+    'redirect_uri': redirect_uri,
     'client_id': client_id,
     'client_secret': client_secret,
 }
 
-
-# In[15]:
-
-
-# Pass an access token - POST a request with client credentials and save part of response
-request_url = 'https://accounts.spotify.com/api/token'
-
-# POST - REQUEST BODY PARAMETER
+# POST request with body + parameter
 auth_response = requests.post(request_url, request_body_parameter)
 
 # convert the response to JSON
 auth_response_data = auth_response.json()
 
-# Try print it out to get refresh_token - oh oops, don't print it out :P 
-# print(auth_response_data)
-
-
-# In[16]:
-
-
 # Save the access token
 access_token = auth_response_data['access_token']
-
 # Save the refresh token
 refresh_token = auth_response_data['refresh_token']
 
+### GET a User's Top Artists and Tracks ###
+### -------------------------- ###
 
-# Step 3: Use access token to access data of interests(?)
-# - Note: when access token expires, it can't be used anymore.
-
-# #### Get a User's Top Artists and Tracks
-
-# In[17]:
-
-
-# Form GET request to API server with access_token in the header
+# Define headers with access_token
 headers = {
     'Authorization': f'Bearer {access_token}'
 }
@@ -141,36 +111,24 @@ headers = {
 # base URL of all Spotify API endpoints
 base_url = 'https://api.spotify.com/v1/'
 
-# user's top track
+# user's top track endpoint: https://developer.spotify.com/documentation/web-api/reference/get-users-top-artists-and-tracks
 top_track = 'me/top/tracks'
-time_range = 'time_range=medium_term'
+time_range = 'time_range=long_term'
 limit = 'limit=50'
-# offset = 'offset=0'
+# offset = 'offset=5'
 
-
-# ##### If token expires, go to Step 4 (scroll down) and run those code; otherwise, skip
-
-# In[19]:
-
-
-# Perfrom a request for data
+# Perfrom GET request for data
 track_json = requests.get(base_url + top_track + '?' + time_range + '&' + limit 
 #                           + '&' + offset
                           , headers=headers).json()
-
-
-# In[20]:
-
 
 # Save outout as json file to go parse later...
 with open('data/raw_top_tracks.json', 'w') as outfile:
     json.dump(track_json, outfile, indent=2)
 
+#### SAVED POINT to come back to ####
 
 # Step 4: When access token expires, refresh token to the rescue (from step 2)
-
-# In[ ]:
-
 
 # Base 64 encoded string that contains the client ID and client secret key.
 import base64
@@ -210,10 +168,6 @@ def refresh_access_token():
     # Update access_token (for step 3)
     return request_access_token_data['access_token']
 
-
-# In[ ]:
-
-
 # Update access token from Step 3
 access_token = refresh_access_token()
 
@@ -221,14 +175,7 @@ access_token = refresh_access_token()
 headers = {'Authorization': f'Bearer {access_token}'}
 
 
-# # Data Clean Up
-
-# Note to self: Write a function that uses map to take the data in array (either array of array or array of object, etc) and apply it in each item in an array - Return me an array from an array with only the pieces I want
-# 
-# Instead of define a bunch of empty lists and create a loop to append each item in to each list, this is much cleaner and more efficient
-
-# In[ ]:
-
+### Data Clean Up --> maybe move this to another file :/
 
 # Map only the datafields I want
 def track_func(track):
