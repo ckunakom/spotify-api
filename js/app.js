@@ -1,3 +1,9 @@
+// Update the date when app last run
+var nowDate = new Date(); 
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var updated_date = `Last Updated: ${nowDate.getDate()+'-'+(months[nowDate.getMonth()])+'-'+nowDate.getFullYear()}`; 
+document.getElementById("last-updated").innerHTML = updated_date;
+
 // --------------- Creating a table --------------- //
 // Get a reference to the table body
 var tbody = d3.select("tbody");
