@@ -40,6 +40,10 @@ url_str = 'https://accounts.spotify.com/authorize?'
 query_string = urlencode(OrderedDict(auth_param))
 auth_url = url_str + query_string 
 
+# Enter spotify credentials
+user_email = getpass(f'Enter username or email: ')
+user_password = getpass(f'Enter password: ')
+
 ### LET CHROME DRIVER DO THE WORK ###
 # Creating a path for chromedriver on windows
 ## Update the path for chromedriver accordingly
@@ -55,11 +59,7 @@ driver = webdriver.Chrome(executable_path=r'c:\bin\chromedriver.exe')
 # launch the url with chrome driver
 driver.get(auth_url)
 
-# Enter spotify credentials
-# user_email = getpass(f'Enter username or email: ')
-# user_password = getpass(f'Enter password: ')
-
-# Fill login info (need to get html id for username and password for below)
+# Fill login info with user's input
 ## Splinter
 # browser.find_by_id('login-username').fill(user_email)
 # browser.find_by_id('login-password').fill(user_password)
@@ -190,48 +190,11 @@ access_token = refresh_access_token()
 # Update headers
 headers = {'Authorization': f'Bearer {access_token}'}
 
-### Data Clean Up --> maybe move this to another file :/
+### ------------------------------------------------- ###
+### -------------------Data Clean Up----------------- ###
+### ------------------------------------------------- ###
 
 # Map only the datafields I want
-def track_func(track):
-#artists = [artist['name'] for artist in track['artists']]
-# artist['name']
-# { 'id': artist['id'], 'name': artist['name'] }
-    artists_id = [  artist['id']  for artist in track['artists'] ]
-    artists_name = [ artist['name']  for artist in track['artists'] ]
-    album_id = track['album']['id']
-    album_name = track['album']['name']
-    release_date = track['album']['release_date']
-    song_id = track['id']
-    title = track['name']
-    popularity = track['popularity']
-    duration_ms = track['duration_ms']
-    song_url = track['external_urls']['spotify']
-
-    return {
-        'song_id': song_id,
-        'title': title,
-        'artists_id': str(artists_id)[2:-2],
-        'artists_name': str(artists_name)[2:-2],
-        'album_id': album_id,
-        'album_name':album_name,
-        'release_date':release_date,
-        'duration_min': round(duration_ms/60000, 2),
-        'popularity': popularity,
-        'song_url': song_url
-        
-    }
-# Use map to give a list iterator
-track_list_iterator = map(track_func, track_json['items'])
-# Turn iterator into a list
-track_list = list(track_list_iterator)
-
-
-# Exporat data to JSON
-with open('data/clean_top_tracks.json', 'w') as outfile:
-    json.dump(track_list, outfile, indent=2)
-
-# Map only the datafields I want v2 - Combining artists of there's more than 1 artist
 def track_func2(track):
     artists_name = [ artist['name']  for artist in track['artists'] ]
     album_name = track['album']['name']
@@ -256,14 +219,6 @@ track_list_iterator2 = map(track_func2, track_json['items'])
 # Turn iterator into a list
 track_list2 = list(track_list_iterator2)
 
-# I need a v2 to serve my immediate purpose
+# Export data json
 with open('data/clean_top_tracks.json', 'w') as outfile:
     json.dump(track_list2, outfile, indent=2)
-
-
-# In[ ]:
-
-
-# Convert the array of data into a dataframe just to look at it
-top_tracks_df = pd.DataFrame(track_list)
-top_tracks_df
