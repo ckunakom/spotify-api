@@ -1,23 +1,24 @@
 # spotify-usage
-Exploring my spotify usage
+What's your top 50 most listened tracks on spotify? 🎵🎧
+
+Reference: [Spotify REST API Documentation](https://developer.spotify.com/documentation/web-api/tutorials/getting-started#create-an-app)
 
 ## Purpose
-I just want to brush up on my skills on using API requests using python. As usual, I choose something that's personal to make things more interesting to work with, music!
+Invoke an API endpoint to get json data of your most listened tracks. Then visualize that in whatever BI tools for some analysis. My initial use case was just listing it out in a table. <i>Why?</i> It's useful for when going for a karaoke marathon where you can just queue up all the songs based on what you have in the list 🎤
 
-### To-do
-- Get data on user-related endpoints
-- Export data out as json
-- Visualize the data in the form of a table 
+### Pre-Requisite
+- Get your virtual env and `pip install` set up by run the following on your Windows(👀) cmd:
+    - >`python -m venv .env`
+    - >`.env/Scripts/activate`
+    - >`pip install -r ./env_req.txt`
+- Download [chromedriver](https://chromedriver.chromium.org/downloads) - version of your Chrome browser
+    - You will need to update the path in the `main.py` to wherever the habitat of the `chromedriver.exe` is 
+- Create an app on your account [dashboard](https://developer.spotify.com/dashboard)
+    - This is where you will get your client id and client secret
 
-## Methodology
-Data Mining with Python: 
-- I didn't quite understand the Spotify API documentation so I googlged around and got an idea from the following github (https://stmorse.github.io/journal/spotify-api.html). 
-- My bestie also slowly walked me through the entire Authorization Flow process to help me understand each step (thank you, Dorfnox🙏🏻)
-- Once data mining is complete, I export that as json file.
+### Steps  -- still need to finish writing
+Note: `splinter` module was working for me the other day and it decides to not work, so I switched to using `selenium` module instead. Comment out the code according to what module you end up using.
+    
+https://developer.spotify.com/documentation/general/guides/authorization-guide/#list-of-scopes
 
-Data Visualization:
-- Using javaScript and HTML/CSS (& thank you bootstrap as usual), a data table is created to show song title with spotify-webplayer embedded URL, artist, album, duration and popularty (according to Spotify documentation, this number is based on some algorithm. Not a lot of explanation there, but I use it anyway!)
-- Filter options are also available to search specific song title, artist or year. I did not find it meaningful to do a search by the album name.
-
-## Future Project
-Seeing a table with a search filter like this makes me want a table to my singing project. I am definitely making one!
+User's top track endpoint: https://developer.spotify.com/documentation/web-api/reference/get-users-top-artists-and-tracks

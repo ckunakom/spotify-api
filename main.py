@@ -1,10 +1,13 @@
-# Dependencies -- omg so many...
+# Dependencies
 import requests
 import json
 import pandas as pd
 from pprint import pprint
 from config import *
-from splinter import Browser
+# from splinter import Browser
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
 from urllib.parse import urlparse
 from urllib.parse import parse_qs
 from urllib.parse import urlencode
@@ -13,7 +16,6 @@ from getpass import getpass
 
 ### -------------------------- ###
 ### --- AUTHORIZATION FLOW --- ### 
-# https://developer.spotify.com/documentation/general/guides/authorization-guide/#list-of-scopes
 
 ### Request User Authorization ###
 ### -------------------------- ###
@@ -40,39 +42,61 @@ auth_url = url_str + query_string
 
 ### LET CHROME DRIVER DO THE WORK ###
 # Creating a path for chromedriver on windows
-executable_path = {'executable_path': 'c:/bin/chromedriver.exe'}
-browser = Browser('chrome', **executable_path, headless=False)
+## Update the path for chromedriver accordingly
+## Splinter
+# executable_path = {'executable_path': r'c:\bin\chromedriver.exe'}
+# browser = Browser('chrome', **executable_path, headless=False)
 
 # launch the url with chrome driver
-browser.visit(auth_url)
+# browser.visit(auth_url)
+
+## Selenium
+driver = webdriver.Chrome(executable_path=r'c:\bin\chromedriver.exe')
+# launch the url with chrome driver
+driver.get(auth_url)
 
 # Enter spotify credentials
-user_email = getpass(f'Enter username or email: ')
-user_password = getpass(f'Enter password: ')
+# user_email = getpass(f'Enter username or email: ')
+# user_password = getpass(f'Enter password: ')
 
 # Fill login info (need to get html id for username and password for below)
-browser.find_by_id('login-username').fill(user_email)
-browser.find_by_id('login-password').fill(user_password)
+## Splinter
+# browser.find_by_id('login-username').fill(user_email)
+# browser.find_by_id('login-password').fill(user_password)
+
+## Selenium
+driver.find_element(By.ID,'login-username').send_keys(user_email)
+driver.find_element(By.ID,'login-password').send_keys(user_password)
 
 # Click the 'Log in' button
-button = browser.find_by_id('login-button')
+# button = browser.find_by_id('login-button') ## Splinter
+button = driver.find_element(By.ID,'login-button') ## Selenium
 button.click()
+# Give it time to pop up another page
+time.sleep(5)
 
 # Click 'Agree' button
-button = browser.find_by_xpath("//button[@data-testid='auth-accept']")
+# button = browser.find_by_xpath("//button[@data-testid='auth-accept']") ## Splinter
+button = driver.find_element(By.XPATH, "//button[@data-testid='auth-accept']") ## Selenium
 button.click()
+# Give it time to change page again
+time.sleep(5)
 
 # Get the current url
-logged_in_url = browser.url
+# logged_in_url = browser.url ## Splinter
+logged_in_url = driver.current_url ## Selenium
 
 # url for spotify api
 parsed_url = urlparse(logged_in_url)
 code_from_url = parse_qs(parsed_url.query)['code'][0]
 
 # Shut the browser down
-browser.quit()
+# browser.quit()  ## Splinter
+driver.close() ## Selenium
 
 ### CHROME DRIVER SHUT DOWN ###
+
+############################################## pause here, clean up later
 
 ### Request Access Token ###
 ### -------------------------- ###
@@ -111,7 +135,7 @@ headers = {
 # base URL of all Spotify API endpoints
 base_url = 'https://api.spotify.com/v1/'
 
-# user's top track endpoint: https://developer.spotify.com/documentation/web-api/reference/get-users-top-artists-and-tracks
+# user's top track endpoint
 top_track = 'me/top/tracks'
 time_range = 'time_range=long_term'
 limit = 'limit=50'
@@ -126,10 +150,8 @@ track_json = requests.get(base_url + top_track + '?' + time_range + '&' + limit
 with open('data/raw_top_tracks.json', 'w') as outfile:
     json.dump(track_json, outfile, indent=2)
 
-#### SAVED POINT to come back to ####
-
-# Step 4: When access token expires, refresh token to the rescue (from step 2)
-
+### ----- When token expires: REFRESH TOKEN---------- ### 
+### ------------------------------------------------- ###
 # Base 64 encoded string that contains the client ID and client secret key.
 import base64
 
@@ -140,12 +162,6 @@ def encode_base64(message):
     return base64_message
 #     return str(base64_bytes, "utf-8")
     
-print(encode_base64(f'{client_id}:{client_secret}'))
-
-
-# In[ ]:
-
-
 # Get the new refresh access token and update - only when request fails 
 def refresh_access_token():   
     # build body parameter
@@ -162,10 +178,10 @@ def refresh_access_token():
         'Authorization': f'Basic {auth_base64}'
     }
     
-    request_access_token = requests.post(AUTH_URL, body, headers=header)
+    request_access_token = requests.post(request_url, body, headers=header)
     request_access_token_data = request_access_token.json()
-    print(request_access_token_data)
-    # Update access_token (for step 3)
+
+    # Update access_token
     return request_access_token_data['access_token']
 
 # Update access token from Step 3
@@ -173,7 +189,6 @@ access_token = refresh_access_token()
 
 # Update headers
 headers = {'Authorization': f'Bearer {access_token}'}
-
 
 ### Data Clean Up --> maybe move this to another file :/
 
@@ -210,27 +225,11 @@ def track_func(track):
 track_list_iterator = map(track_func, track_json['items'])
 # Turn iterator into a list
 track_list = list(track_list_iterator)
-track_list
-
-
-# In[ ]:
-
-
-track_json
-
-
-# In[ ]:
 
 
 # Exporat data to JSON
 with open('data/clean_top_tracks.json', 'w') as outfile:
     json.dump(track_list, outfile, indent=2)
-    
-# Wahh!! Beautiful!
-
-
-# In[ ]:
-
 
 # Map only the datafields I want v2 - Combining artists of there's more than 1 artist
 def track_func2(track):
@@ -268,4 +267,3 @@ with open('data/clean_top_tracks.json', 'w') as outfile:
 # Convert the array of data into a dataframe just to look at it
 top_tracks_df = pd.DataFrame(track_list)
 top_tracks_df
-
