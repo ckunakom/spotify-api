@@ -94,15 +94,12 @@ code_from_url = parse_qs(parsed_url.query)['code'][0]
 # browser.quit()  ## Splinter
 driver.close() ## Selenium
 
-### CHROME DRIVER SHUT DOWN ###
-
-############################################## pause here, clean up later
+### ---CHROME DRIVER SHUT DOWN ---###
 
 ### Request Access Token ###
 ### -------------------------- ###
 
 # Make POST request to Spotify on /api/token endpoint
-
 # Define required parameter
 request_url = 'https://accounts.spotify.com/api/token'
 request_body_parameter = {
@@ -149,46 +146,6 @@ track_json = requests.get(base_url + top_track + '?' + time_range + '&' + limit
 # Save outout as json file to go parse later...
 with open('data/raw_top_tracks.json', 'w') as outfile:
     json.dump(track_json, outfile, indent=2)
-
-### ----- When token expires: REFRESH TOKEN---------- ### 
-### ------------------------------------------------- ###
-# Base 64 encoded string that contains the client ID and client secret key.
-import base64
-
-def encode_base64(message):
-    message_bytes = message.encode('ascii')
-    base64_bytes = base64.b64encode(message_bytes)
-    base64_message = base64_bytes.decode('ascii') 
-    return base64_message
-#     return str(base64_bytes, "utf-8")
-    
-# Get the new refresh access token and update - only when request fails 
-def refresh_access_token():   
-    # build body parameter
-    body = {
-        'grant_type': 'refresh_token',
-        'refresh_token': refresh_token
-    }
-    
-    # base64 string from above encode_base64 function
-    auth_base64 = encode_base64(f'{client_id}:{client_secret}')
-    
-    # build header parameter
-    header = {
-        'Authorization': f'Basic {auth_base64}'
-    }
-    
-    request_access_token = requests.post(request_url, body, headers=header)
-    request_access_token_data = request_access_token.json()
-
-    # Update access_token
-    return request_access_token_data['access_token']
-
-# Update access token from Step 3
-access_token = refresh_access_token()
-
-# Update headers
-headers = {'Authorization': f'Bearer {access_token}'}
 
 ### ------------------------------------------------- ###
 ### -------------------Data Clean Up----------------- ###
