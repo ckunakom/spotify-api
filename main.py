@@ -24,6 +24,7 @@ redirect_uri = 'https://google.com/callback'
 
 # the scope applicable for Read access to a user's top artists and tracks.
 # https://developer.spotify.com/documentation/web-api/concepts/scopes
+# https://developer.spotify.com/documentation/general/guides/authorization-guide/#list-of-scopes
 scope = 'user-top-read'
 
 auth_param = {
@@ -134,6 +135,9 @@ base_url = 'https://api.spotify.com/v1/'
 
 # user's top track endpoint
 top_track = 'me/top/tracks'
+# Time range value quick guide:
+    ## short_term: 4 weeks, medium: 6 months 
+    ## long_term: over several year
 time_range = 'time_range=long_term'
 limit = 'limit=50'
 # offset = 'offset=5'
