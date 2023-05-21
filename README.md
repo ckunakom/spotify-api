@@ -9,7 +9,7 @@ Invoke an API endpoint to get json data of your most listened tracks. Then visua
 ## Pre-Requisite
 - Get your virtual env and `pip install` set up by run the following on your Windows(👀) cmd:
     - >`python -m venv .env`
-    - >`.env/Scripts/activate`
+    - >`.env\Scripts\activate`
     - >`pip install -r ./env_req.txt`
 - Download [chromedriver](https://chromedriver.chromium.org/downloads) - version of your Chrome browser
     - You will need to update the path in the `main.py` to wherever the habitat of the `chromedriver.exe` is 
