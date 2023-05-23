@@ -22,11 +22,10 @@ Invoke an API endpoint to get json data of your most listened tracks. Then visua
 1. Update `executable_path` to be wherever you downloaded chromedriver from pre-req step.
 1. Run the script in `main.py`.
 1. You will get prompted to input your username and password for spotify since the data will be from your account.
-1 .
 
 Note: 
 - `splinter` module was working for me in jupyter notebook but not `main.py`, so I switched to using `selenium` module instead since it was a good learning opportunity. Comment out the code according to what module you end up using.
+- `api` directory has all the different endpoints that I broke apart from `main.py`. STILL IN DRAFT.
 - `playground.ipynb` was the original code file with a bunch of notes. It got updated to remove some notes but I am keeping it as my actual notebook 📓
 
 User's top track endpoint: https://developer.spotify.com/documentation/web-api/reference/get-users-top-artists-and-tracks
-

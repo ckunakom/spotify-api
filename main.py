@@ -3,7 +3,7 @@ import requests
 import json
 import pandas as pd
 from pprint import pprint
-from config import *
+from api.config import *
 # from splinter import Browser
 from selenium import webdriver
 from selenium.webdriver.common.by import By
