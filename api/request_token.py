@@ -1,8 +1,8 @@
-from api.config import *
+from config import *
 import requests
 
 # Paste the code string copied from the URL after logging in
-code_from_url = 'AQAfWKtlBJ_TbKR3zKv2W9-PiY--8VVx2m6PkZjh5SW089ZNhCSWgra8qdDQzlfNCHrSswmHWQ_eL9NYbWZFvA2SSoNUxIdXptcyjx7aV49yqoCESgHz_GPzmIdz774NCsg3VtOApA0frydCPWu1LpjegIxzP4bxc6MJbn4hvVP7l2Xk6KW5Ys4X_RkAvA'
+code_from_url = ''
 
 def request_token():
     ### Request Access Token ###

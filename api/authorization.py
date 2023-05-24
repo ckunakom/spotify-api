@@ -1,5 +1,5 @@
 # Dependencies
-from api.config import *
+from config import *
 from urllib.parse import urlencode
 from collections import OrderedDict
 from getpass import getpass

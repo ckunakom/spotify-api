@@ -2,13 +2,14 @@
 import json
 import pandas as pd
 import requests
-from api.top_tracks import *
+from top_tracks import *
 
 # Define empty array for ids
 artist_ids = []
 
 # Loop through track_json from top_tracks endpoint
 artist_data = track_json['items']
+
 for artist in artist_data:
     item = artist['album']['artists']
     for i in item:
@@ -34,5 +35,5 @@ for id in artist_ids:
     artist_json.append(artist_resp)
 
 # Save outout as json file to go parse later...
-with open('./data/artist.json', 'w') as outfile:
+with open('../data/raw_artists.json', 'w') as outfile:
     json.dump(artist_json, outfile, indent=2)
