@@ -6,3 +6,4 @@
 1. Run `artist.py`. This will also run `top_tracks.py`.
     - You can change the `time_range` in  `top_tracks.py`. The default is 6-month.
 1. Two json files will get generated. If you want to use tableau dashboard template, then run the `data_cleaning.py`.
+1. Drop the csv file into `DIY Spotify-Wrapped Template.twbx` (You'll need Tableau for this of course) and refresh data.

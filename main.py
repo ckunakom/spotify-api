@@ -135,9 +135,9 @@ base_url = 'https://api.spotify.com/v1/'
 
 # user's top track endpoint
 top_track = 'me/top/tracks'
-# Time range value quick guide:
-    ## short_term: 4 weeks, medium: 6 months 
-    ## long_term: over several year
+''' short_term: 4 weeks 
+    medium_term: 6 months 
+    long_term: over several year '''
 time_range = 'time_range=long_term'
 limit = 'limit=50'
 # offset = 'offset=5'
@@ -170,7 +170,7 @@ for artist in artist_data:
 ### GET Artists from prior request ###
 ### -------------------------- ###
 artist_url = 'https://api.spotify.com/v1/artists/'
-# artist endpoint -- artists/{id}
+'''artist endpoint: artists/{id}'''
 
 # Time to loop through
 artist_json = []
@@ -181,8 +181,8 @@ for id in artist_ids:
                             , headers=headers).json()
     artist_json.append(artist_resp)
 
-# Save outout as json file to go parse later...
-with open('../data/raw_artists.json', 'w') as outfile:
+# Save output as json file to go parse later...
+with open('data/raw_artists.json', 'w') as outfile:
     json.dump(artist_json, outfile, indent=2)
 
-# How about turning everything in data_cleaning.py to function and just call them down here?
+print('Data Extractioon is complete. Run data_cleaning.py next.')

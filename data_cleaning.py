@@ -137,3 +137,4 @@ spotify_df = spotify_df.rename(columns={"genres_y": "genre"})
 spotify_df.to_csv("data/spotify.csv", encoding="utf-8")
 
 print("Data clean-up is complete!")
+print("Drag the csv file fron data directory and connect it to Tableau (if you wish)!")
