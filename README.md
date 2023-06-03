@@ -7,6 +7,7 @@ Reference: [Spotify REST API Documentation](https://developer.spotify.com/docume
 Invoke an API endpoint to get json data of your most listened tracks. Then visualize that in whatever BI tools for some analysis. My initial use case was just listing it out in a table. <i>Why?</i> It's useful for when going for a karaoke marathon where you can just queue up all the songs based on what you have in the list 🎤
 
 ## Pre-Requisite
+- Turn the `env.txt` to `.env` file.
 - Get your virtual env and `pip install` set up by run the following on your Windows(👀) cmd:
     - >`python -m venv .venv`
     - >`.venv\Scripts\activate`
@@ -18,7 +19,7 @@ Invoke an API endpoint to get json data of your most listened tracks. Then visua
 
 ## Steps to Produce the same result in [`data`](<add link to data folder>)
 
-1. Fill in `config.py` file with your client id and client secret from Pre-Requisite section.
+1. Fill in `.env` file with your client id and client secret from Pre-Requisite section.
 1. Update `executable_path` to be wherever you downloaded chromedriver from pre-req step.
 1. Run the script in `main.py`.
 1. You will get prompted to input your username and password for spotify since the data will be from your account.

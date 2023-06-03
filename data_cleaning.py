@@ -2,7 +2,6 @@
 import json
 import pandas as pd
 
-
 ##############################
 ###### raw_top_tracks ########
 ##############################
@@ -44,13 +43,15 @@ def track_func(track):
         "song_preview_url": song_preview_url,
     }
 
-# Throw this as function -- can probably recycle below
-# def list(item):
-# Use map to give a list iterator
-track_list_iterator = map(track_func, track_json["items"])
-# Turn iterator into a list
-track_list = list(track_list_iterator)
-# return track_list
+# Map the json data for function above
+def list_iterator(function, json_key):
+    # Use map to give a list iterator
+    list_map = map(function, json_key)
+    # Turn iterator into a list
+    data_list = list(list_map)
+    return data_list
+
+track_list = list_iterator(track_func, track_json["items"])
 
 # track cleaning data
 # Convert the array of data into a dataframe
@@ -65,6 +66,8 @@ tracks_df['rank'] = tracks_df.index + 1
 
 # Export to csv
 # tracks_df.to_csv('data/top_tracks.csv', encoding='utf-8')
+
+print("Track data has been processed.")
 
 ##############################
 ###### raw_artists ###########
@@ -94,17 +97,21 @@ def artist_list(track):
         "artist_url": artist_url,
     }
 
-# use same function?
-artist_list_iterator = map(artist_list, artist_json)
-artist_data = list(artist_list_iterator)
+# Get the handpicked artist data
+artist_data = list_iterator(artist_list, artist_json)
 
-# ######### PAUSE HERE
 # Turn to df and export to csv
 artist_df = pd.DataFrame(artist_data)
 # artist_df.to_csv('data/artists.csv', encoding='utf-8')
 
 # Join the tracks and the artist dfs together
 track_artist = pd.merge(tracks_df, artist_df, on="artists_id", how="left")
+
+print("Artist data has been processed.")
+
+##############################
+######## genre data ##########
+##############################
 
 # Create genre df out of artist_df
 genres_raw = artist_df[["artists_id", "genres"]]
@@ -114,15 +121,17 @@ genre_df = genres_raw.explode("genres")
 # Capitalize first letter
 genre_df["genres"] = genre_df["genres"].str.capitalize()
 
+print("Genre data has been processed.")
+
 ##############################
-###### FINAL DATA ###########
+######## FINAL DATA ##########
 ##############################
 
 # Merge w top tracks and artist to get one complete data
 spotify_df = pd.merge(track_artist, genre_df, on="artists_id", how="left")
 
 # Clean up: del unneeded dup column, rename
-spotify_df.drop("genres_x", axis=1)
+spotify_df = spotify_df.drop("genres_x", axis=1)
 spotify_df = spotify_df.rename(columns={"genres_y": "genre"})
 # Export to csv
 spotify_df.to_csv("data/spotify.csv", encoding="utf-8")
