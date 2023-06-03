@@ -1,18 +1,18 @@
 # Dependencies
-import requests
 import json
 import pandas as pd
+
 
 ##############################
 ###### raw_top_tracks ########
 ##############################
 
-# Exporat data to JSON
+# Read JSON data
 with open("data/raw_top_tracks.json", "r") as read:
     track_json = json.load(read)
 
 
-# Map only the datafields I want
+# Map only the track datafields I want
 def track_func(track):
     artists_name = [artist["name"] for artist in track["artists"]]
     # for getting artist img and url in another file
@@ -44,20 +44,24 @@ def track_func(track):
         "song_preview_url": song_preview_url,
     }
 
-
+# Throw this as function -- can probably recycle below
+# def list(item):
 # Use map to give a list iterator
 track_list_iterator = map(track_func, track_json["items"])
 # Turn iterator into a list
-track_list2 = list(track_list_iterator)
+track_list = list(track_list_iterator)
+# return track_list
 
+# track cleaning data
 # Convert the array of data into a dataframe
-top_tracks_df = pd.DataFrame(track_list2)
+top_tracks_df = pd.DataFrame(track_list)
 
-# Add rank column here
+# Add rank column by sort and reset index
 top_tracks_df = top_tracks_df.sort_values(["popularity"], ascending=False)
-
 # reset index
 tracks_df = top_tracks_df.reset_index(drop=True)
+# Create a rank column
+tracks_df['rank'] = tracks_df.index + 1
 
 # Export to csv
 # tracks_df.to_csv('data/top_tracks.csv', encoding='utf-8')
@@ -90,10 +94,11 @@ def artist_list(track):
         "artist_url": artist_url,
     }
 
-
+# use same function?
 artist_list_iterator = map(artist_list, artist_json)
 artist_data = list(artist_list_iterator)
 
+# ######### PAUSE HERE
 # Turn to df and export to csv
 artist_df = pd.DataFrame(artist_data)
 # artist_df.to_csv('data/artists.csv', encoding='utf-8')

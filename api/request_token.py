@@ -1,9 +1,6 @@
 from config import *
 import requests
 
-# Paste the code string copied from the URL after logging in
-code_from_url = ''
-
 def request_token():
     ### Request Access Token ###
     ### -------------------------- ###

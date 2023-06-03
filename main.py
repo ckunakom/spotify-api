@@ -151,35 +151,38 @@ track_json = requests.get(base_url + top_track + '?' + time_range + '&' + limit
 with open('data/raw_top_tracks.json', 'w') as outfile:
     json.dump(track_json, outfile, indent=2)
 
-### ------------------------------------------------- ###
-### -------------------Data Clean Up----------------- ###
-### ------------------------------------------------- ###
+# Define empty array for ids
+artist_ids = []
 
-# Map only the datafields I want
-def track_func2(track):
-    artists_name = [ artist['name']  for artist in track['artists'] ]
-    album_name = track['album']['name']
-    release_date = track['album']['release_date']
-    title = track['name']
-    popularity = track['popularity']
-    duration_ms = track['duration_ms']
-    song_url = track['external_urls']['spotify']
+# Loop through track_json from top_tracks endpoint
+artist_data = track_json['items']
 
-    return {
-        'title': title,
-        'artists_name': str(artists_name)[2:-2],
-        'album_name':album_name,
-        'release_date':release_date,
-        'duration_min': round(duration_ms/60000, 2),
-        'popularity': popularity,
-        'song_url': song_url
-    }
+for artist in artist_data:
+    item = artist['album']['artists']
+    for i in item:
+        id = i['id']
+        # No duplicate artist shall make it to the array
+        if id in artist_ids:
+            continue
+        else:
+            artist_ids.append(id)
 
-# Use map to give a list iterator
-track_list_iterator2 = map(track_func2, track_json['items'])
-# Turn iterator into a list
-track_list2 = list(track_list_iterator2)
+### GET Artists from prior request ###
+### -------------------------- ###
+artist_url = 'https://api.spotify.com/v1/artists/'
+# artist endpoint -- artists/{id}
 
-# Export data json
-with open('data/clean_top_tracks.json', 'w') as outfile:
-    json.dump(track_list2, outfile, indent=2)
+# Time to loop through
+artist_json = []
+
+for id in artist_ids:
+    # Perfrom GET request for data
+    artist_resp = requests.get(artist_url + id
+                            , headers=headers).json()
+    artist_json.append(artist_resp)
+
+# Save outout as json file to go parse later...
+with open('../data/raw_artists.json', 'w') as outfile:
+    json.dump(artist_json, outfile, indent=2)
+
+# How about turning everything in data_cleaning.py to function and just call them down here?

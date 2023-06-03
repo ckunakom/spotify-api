@@ -1,8 +1,8 @@
 from request_token import *
 import json
 
-### GET a User's Top Artists and Tracks ###
-### -------------------------- ###
+### GET User's Top Tracks ###
+### ----------------------------------- ###
 
 def get_top_tracks():
     # base URL of all Spotify API endpoints
@@ -11,8 +11,9 @@ def get_top_tracks():
     # user's top track endpoint
     top_track = 'me/top/tracks'
     # Time range value quick guide:
-        ## short_term: 4 weeks, medium_term: 6 months 
-        ## long_term: over several year
+    ''' short_term: 4 weeks 
+        medium_term: 6 months 
+        long_term: over several year '''
     time_range = 'time_range=medium_term'
     limit = 'limit=50'
     # offset = 'offset=5'
@@ -27,5 +28,5 @@ def get_top_tracks():
 get_top_tracks()
 
 # Save outout as json file to go parse later...
-with open('../data/raw_top_tracks.json', 'w') as outfile:
+with open('./data/raw_top_tracks.json', 'w') as outfile:
     json.dump(track_json, outfile, indent=2)

@@ -5,7 +5,7 @@
     },
     "followers": {
       "href": null,
-      "total": 1822964
+      "total": 1845147
     },
     "genres": [
       "j-pop",
@@ -42,7 +42,7 @@
     },
     "followers": {
       "href": null,
-      "total": 16168
+      "total": 16694
     },
     "genres": [],
     "href": "https://api.spotify.com/v1/artists/1WmnQSoQxUa4x14IWgHCiD",
@@ -75,7 +75,7 @@
     },
     "followers": {
       "href": null,
-      "total": 448826
+      "total": 451561
     },
     "genres": [
       "j-pop",
@@ -111,7 +111,7 @@
     },
     "followers": {
       "href": null,
-      "total": 353383
+      "total": 354519
     },
     "genres": [
       "japanese teen pop"
@@ -146,7 +146,7 @@
     },
     "followers": {
       "href": null,
-      "total": 2128
+      "total": 2239
     },
     "genres": [],
     "href": "https://api.spotify.com/v1/artists/3D3rPrHQXf7RGhWPNtVNHk",
@@ -179,7 +179,7 @@
     },
     "followers": {
       "href": null,
-      "total": 1360
+      "total": 1377
     },
     "genres": [],
     "href": "https://api.spotify.com/v1/artists/2FBCBROCrxXD4tC6TmA8t4",
@@ -202,7 +202,7 @@
       }
     ],
     "name": "\u4e01",
-    "popularity": 27,
+    "popularity": 26,
     "type": "artist",
     "uri": "spotify:artist:2FBCBROCrxXD4tC6TmA8t4"
   },
@@ -212,7 +212,7 @@
     },
     "followers": {
       "href": null,
-      "total": 387444
+      "total": 394068
     },
     "genres": [
       "j-pop",
@@ -238,77 +238,9 @@
       }
     ],
     "name": "Tani Yuuki",
-    "popularity": 65,
+    "popularity": 64,
     "type": "artist",
     "uri": "spotify:artist:0B1ce3uNrzkdm76NXI4mhX"
-  },
-  {
-    "external_urls": {
-      "spotify": "https://open.spotify.com/artist/1ZIxbWqFUSc5Rfw1pmyk1H"
-    },
-    "followers": {
-      "href": null,
-      "total": 1600
-    },
-    "genres": [],
-    "href": "https://api.spotify.com/v1/artists/1ZIxbWqFUSc5Rfw1pmyk1H",
-    "id": "1ZIxbWqFUSc5Rfw1pmyk1H",
-    "images": [
-      {
-        "height": 640,
-        "url": "https://i.scdn.co/image/ab67616d0000b273782c74debacc6e427ca14ac4",
-        "width": 640
-      },
-      {
-        "height": 300,
-        "url": "https://i.scdn.co/image/ab67616d00001e02782c74debacc6e427ca14ac4",
-        "width": 300
-      },
-      {
-        "height": 64,
-        "url": "https://i.scdn.co/image/ab67616d00004851833aa478c8c20b729f4407c9",
-        "width": 64
-      }
-    ],
-    "name": "\u6768\u79c9\u97f3",
-    "popularity": 34,
-    "type": "artist",
-    "uri": "spotify:artist:1ZIxbWqFUSc5Rfw1pmyk1H"
-  },
-  {
-    "external_urls": {
-      "spotify": "https://open.spotify.com/artist/0wqa4zlg4Ru1nVJRrOlx5B"
-    },
-    "followers": {
-      "href": null,
-      "total": 37602
-    },
-    "genres": [
-      "anime rock"
-    ],
-    "href": "https://api.spotify.com/v1/artists/0wqa4zlg4Ru1nVJRrOlx5B",
-    "id": "0wqa4zlg4Ru1nVJRrOlx5B",
-    "images": [
-      {
-        "height": 640,
-        "url": "https://i.scdn.co/image/ab6761610000e5eb36a7785f53935c37ccd563db",
-        "width": 640
-      },
-      {
-        "height": 320,
-        "url": "https://i.scdn.co/image/ab6761610000517436a7785f53935c37ccd563db",
-        "width": 320
-      },
-      {
-        "height": 160,
-        "url": "https://i.scdn.co/image/ab6761610000f17836a7785f53935c37ccd563db",
-        "width": 160
-      }
-    ],
-    "name": "Tomohisa Sako",
-    "popularity": 33,
-    "type": "artist",
-    "uri": "spotify:artist:0wqa4zlg4Ru1nVJRrOlx5B"
   },
   {
     "external_urls": {
@@ -316,7 +248,7 @@
     },
     "followers": {
       "href": null,
-      "total": 1964661
+      "total": 1972264
     },
     "genres": [
       "anime",
@@ -352,7 +284,7 @@
     },
     "followers": {
       "href": null,
-      "total": 20373
+      "total": 21138
     },
     "genres": [],
     "href": "https://api.spotify.com/v1/artists/013zmpwJVA8E15pb1hM68O",
@@ -381,11 +313,46 @@
   },
   {
     "external_urls": {
+      "spotify": "https://open.spotify.com/artist/0wqa4zlg4Ru1nVJRrOlx5B"
+    },
+    "followers": {
+      "href": null,
+      "total": 37633
+    },
+    "genres": [
+      "anime rock"
+    ],
+    "href": "https://api.spotify.com/v1/artists/0wqa4zlg4Ru1nVJRrOlx5B",
+    "id": "0wqa4zlg4Ru1nVJRrOlx5B",
+    "images": [
+      {
+        "height": 640,
+        "url": "https://i.scdn.co/image/ab6761610000e5eb36a7785f53935c37ccd563db",
+        "width": 640
+      },
+      {
+        "height": 320,
+        "url": "https://i.scdn.co/image/ab6761610000517436a7785f53935c37ccd563db",
+        "width": 320
+      },
+      {
+        "height": 160,
+        "url": "https://i.scdn.co/image/ab6761610000f17836a7785f53935c37ccd563db",
+        "width": 160
+      }
+    ],
+    "name": "Tomohisa Sako",
+    "popularity": 33,
+    "type": "artist",
+    "uri": "spotify:artist:0wqa4zlg4Ru1nVJRrOlx5B"
+  },
+  {
+    "external_urls": {
       "spotify": "https://open.spotify.com/artist/0bAsR2unSRpn6BQPEnNlZm"
     },
     "followers": {
       "href": null,
-      "total": 2235594
+      "total": 2244409
     },
     "genres": [
       "anime",
@@ -414,79 +381,75 @@
       }
     ],
     "name": "Aimer",
-    "popularity": 69,
+    "popularity": 68,
     "type": "artist",
     "uri": "spotify:artist:0bAsR2unSRpn6BQPEnNlZm"
   },
   {
     "external_urls": {
-      "spotify": "https://open.spotify.com/artist/4FPhimiDlyEUsTSMWAUrhG"
+      "spotify": "https://open.spotify.com/artist/1MMwG2KB8SZB9xvvJoXUwQ"
     },
     "followers": {
       "href": null,
-      "total": 6293
+      "total": 5572
     },
-    "genres": [
-      "j-poprock"
-    ],
-    "href": "https://api.spotify.com/v1/artists/4FPhimiDlyEUsTSMWAUrhG",
-    "id": "4FPhimiDlyEUsTSMWAUrhG",
+    "genres": [],
+    "href": "https://api.spotify.com/v1/artists/1MMwG2KB8SZB9xvvJoXUwQ",
+    "id": "1MMwG2KB8SZB9xvvJoXUwQ",
     "images": [
       {
         "height": 640,
-        "url": "https://i.scdn.co/image/ab6761610000e5eb002f5c9379118269e9b6ae98",
+        "url": "https://i.scdn.co/image/ab6761610000e5eb9e0266b9911a991d12f22ec4",
         "width": 640
       },
       {
         "height": 320,
-        "url": "https://i.scdn.co/image/ab67616100005174002f5c9379118269e9b6ae98",
+        "url": "https://i.scdn.co/image/ab676161000051749e0266b9911a991d12f22ec4",
         "width": 320
       },
       {
         "height": 160,
-        "url": "https://i.scdn.co/image/ab6761610000f178002f5c9379118269e9b6ae98",
+        "url": "https://i.scdn.co/image/ab6761610000f1789e0266b9911a991d12f22ec4",
         "width": 160
       }
     ],
-    "name": "fumika",
-    "popularity": 26,
+    "name": "YO_CO",
+    "popularity": 39,
     "type": "artist",
-    "uri": "spotify:artist:4FPhimiDlyEUsTSMWAUrhG"
+    "uri": "spotify:artist:1MMwG2KB8SZB9xvvJoXUwQ"
   },
   {
     "external_urls": {
-      "spotify": "https://open.spotify.com/artist/5gBtcJIa6ZLJB1HUwfik4J"
+      "spotify": "https://open.spotify.com/artist/1ZIxbWqFUSc5Rfw1pmyk1H"
     },
     "followers": {
       "href": null,
-      "total": 65491
+      "total": 1654
     },
-    "genres": [
-      "vocaloid"
-    ],
-    "href": "https://api.spotify.com/v1/artists/5gBtcJIa6ZLJB1HUwfik4J",
-    "id": "5gBtcJIa6ZLJB1HUwfik4J",
+    "genres": [],
+    "href": "https://api.spotify.com/v1/artists/1ZIxbWqFUSc5Rfw1pmyk1H",
+    "id": "1ZIxbWqFUSc5Rfw1pmyk1H",
     "images": [
       {
         "height": 640,
-        "url": "https://i.scdn.co/image/ab6761610000e5ebfcba0c2d9ab9a8597b273ce5",
+        "url": "https://i.scdn.co/image/ab67616d0000b273782c74debacc6e427ca14ac4",
         "width": 640
       },
       {
-        "height": 320,
-        "url": "https://i.scdn.co/image/ab67616100005174fcba0c2d9ab9a8597b273ce5",
-        "width": 320
+        "height": 300,
+        "url": "https://i.scdn.co/image/ab67616d00001e02782c74debacc6e427ca14ac4",
+        "width": 300
       },
       {
-        "height": 160,
-        "url": "https://i.scdn.co/image/ab6761610000f178fcba0c2d9ab9a8597b273ce5",
-        "width": 160
+        "height": 64,
+        "url": "https://i.scdn.co/image/ab67616d00004851833aa478c8c20b729f4407c9",
+        "width": 64
       }
     ],
-    "name": "Wolpis Carter",
-    "popularity": 39,
+    "name": "\u6768\u79c9\u97f3",
+    "popularity": 34,
     "type": "artist",
-    "uri": "spotify:artist:5gBtcJIa6ZLJB1HUwfik4J"
+    "uri": "spotify:artist:1ZIxbWqFUSc5Rfw1pmyk1H"
   },
   {
     "external_urls": {
@@ -494,7 +457,7 @@
     },
     "followers": {
       "href": null,
-      "total": 36755
+      "total": 37112
     },
     "genres": [],
     "href": "https://api.spotify.com/v1/artists/5XnMEOCzuW5XCsqgqEek16",
@@ -523,82 +486,11 @@
   },
   {
     "external_urls": {
-      "spotify": "https://open.spotify.com/artist/3i7tuzRfutJGAUowspOM1f"
-    },
-    "followers": {
-      "href": null,
-      "total": 76718
-    },
-    "genres": [
-      "anime rock"
-    ],
-    "href": "https://api.spotify.com/v1/artists/3i7tuzRfutJGAUowspOM1f",
-    "id": "3i7tuzRfutJGAUowspOM1f",
-    "images": [
-      {
-        "height": 640,
-        "url": "https://i.scdn.co/image/ab6761610000e5eb4111b1cba48ba33c6b98e7bf",
-        "width": 640
-      },
-      {
-        "height": 320,
-        "url": "https://i.scdn.co/image/ab676161000051744111b1cba48ba33c6b98e7bf",
-        "width": 320
-      },
-      {
-        "height": 160,
-        "url": "https://i.scdn.co/image/ab6761610000f1784111b1cba48ba33c6b98e7bf",
-        "width": 160
-      }
-    ],
-    "name": "Kashitaro Ito",
-    "popularity": 38,
-    "type": "artist",
-    "uri": "spotify:artist:3i7tuzRfutJGAUowspOM1f"
-  },
-  {
-    "external_urls": {
-      "spotify": "https://open.spotify.com/artist/64tJ2EAv1R6UaZqc4iOCyj"
-    },
-    "followers": {
-      "href": null,
-      "total": 5489473
-    },
-    "genres": [
-      "j-pop",
-      "japanese teen pop"
-    ],
-    "href": "https://api.spotify.com/v1/artists/64tJ2EAv1R6UaZqc4iOCyj",
-    "id": "64tJ2EAv1R6UaZqc4iOCyj",
-    "images": [
-      {
-        "height": 640,
-        "url": "https://i.scdn.co/image/ab6761610000e5ebfbe071f5bc42f38d3485a29a",
-        "width": 640
-      },
-      {
-        "height": 320,
-        "url": "https://i.scdn.co/image/ab67616100005174fbe071f5bc42f38d3485a29a",
-        "width": 320
-      },
-      {
-        "height": 160,
-        "url": "https://i.scdn.co/image/ab6761610000f178fbe071f5bc42f38d3485a29a",
-        "width": 160
-      }
-    ],
-    "name": "YOASOBI",
-    "popularity": 79,
-    "type": "artist",
-    "uri": "spotify:artist:64tJ2EAv1R6UaZqc4iOCyj"
-  },
-  {
-    "external_urls": {
       "spotify": "https://open.spotify.com/artist/6n4SsAp5VjvIBg3s9QCcPX"
     },
     "followers": {
       "href": null,
-      "total": 1865797
+      "total": 1871125
     },
     "genres": [
       "anime rock",
@@ -625,44 +517,9 @@
       }
     ],
     "name": "SUDA MASAKI",
-    "popularity": 60,
+    "popularity": 59,
     "type": "artist",
     "uri": "spotify:artist:6n4SsAp5VjvIBg3s9QCcPX"
-  },
-  {
-    "external_urls": {
-      "spotify": "https://open.spotify.com/artist/3sE3971KYAw7t9ENx8Eqwk"
-    },
-    "followers": {
-      "href": null,
-      "total": 40994
-    },
-    "genres": [
-      "j-poprock"
-    ],
-    "href": "https://api.spotify.com/v1/artists/3sE3971KYAw7t9ENx8Eqwk",
-    "id": "3sE3971KYAw7t9ENx8Eqwk",
-    "images": [
-      {
-        "height": 640,
-        "url": "https://i.scdn.co/image/ab6761610000e5eb8ae8d1665469f05671d04b50",
-        "width": 640
-      },
-      {
-        "height": 320,
-        "url": "https://i.scdn.co/image/ab676161000051748ae8d1665469f05671d04b50",
-        "width": 320
-      },
-      {
-        "height": 160,
-        "url": "https://i.scdn.co/image/ab6761610000f1788ae8d1665469f05671d04b50",
-        "width": 160
-      }
-    ],
-    "name": "Who-ya Extended",
-    "popularity": 46,
-    "type": "artist",
-    "uri": "spotify:artist:3sE3971KYAw7t9ENx8Eqwk"
   },
   {
     "external_urls": {
@@ -670,7 +527,7 @@
     },
     "followers": {
       "href": null,
-      "total": 750508
+      "total": 752106
     },
     "genres": [
       "j-pop",
@@ -702,11 +559,187 @@
   },
   {
     "external_urls": {
+      "spotify": "https://open.spotify.com/artist/4FPhimiDlyEUsTSMWAUrhG"
+    },
+    "followers": {
+      "href": null,
+      "total": 6346
+    },
+    "genres": [
+      "j-poprock"
+    ],
+    "href": "https://api.spotify.com/v1/artists/4FPhimiDlyEUsTSMWAUrhG",
+    "id": "4FPhimiDlyEUsTSMWAUrhG",
+    "images": [
+      {
+        "height": 640,
+        "url": "https://i.scdn.co/image/ab6761610000e5eb002f5c9379118269e9b6ae98",
+        "width": 640
+      },
+      {
+        "height": 320,
+        "url": "https://i.scdn.co/image/ab67616100005174002f5c9379118269e9b6ae98",
+        "width": 320
+      },
+      {
+        "height": 160,
+        "url": "https://i.scdn.co/image/ab6761610000f178002f5c9379118269e9b6ae98",
+        "width": 160
+      }
+    ],
+    "name": "fumika",
+    "popularity": 26,
+    "type": "artist",
+    "uri": "spotify:artist:4FPhimiDlyEUsTSMWAUrhG"
+  },
+  {
+    "external_urls": {
+      "spotify": "https://open.spotify.com/artist/1vgwCsZx2um1wmTgP5EkZj"
+    },
+    "followers": {
+      "href": null,
+      "total": 27163
+    },
+    "genres": [
+      "japanese alternative rock"
+    ],
+    "href": "https://api.spotify.com/v1/artists/1vgwCsZx2um1wmTgP5EkZj",
+    "id": "1vgwCsZx2um1wmTgP5EkZj",
+    "images": [
+      {
+        "height": 640,
+        "url": "https://i.scdn.co/image/ab6761610000e5eb7ec8cac66fd6525e07a7e456",
+        "width": 640
+      },
+      {
+        "height": 320,
+        "url": "https://i.scdn.co/image/ab676161000051747ec8cac66fd6525e07a7e456",
+        "width": 320
+      },
+      {
+        "height": 160,
+        "url": "https://i.scdn.co/image/ab6761610000f1787ec8cac66fd6525e07a7e456",
+        "width": 160
+      }
+    ],
+    "name": "Hakubi",
+    "popularity": 31,
+    "type": "artist",
+    "uri": "spotify:artist:1vgwCsZx2um1wmTgP5EkZj"
+  },
+  {
+    "external_urls": {
+      "spotify": "https://open.spotify.com/artist/5gBtcJIa6ZLJB1HUwfik4J"
+    },
+    "followers": {
+      "href": null,
+      "total": 66062
+    },
+    "genres": [
+      "vocaloid"
+    ],
+    "href": "https://api.spotify.com/v1/artists/5gBtcJIa6ZLJB1HUwfik4J",
+    "id": "5gBtcJIa6ZLJB1HUwfik4J",
+    "images": [
+      {
+        "height": 640,
+        "url": "https://i.scdn.co/image/ab6761610000e5ebfcba0c2d9ab9a8597b273ce5",
+        "width": 640
+      },
+      {
+        "height": 320,
+        "url": "https://i.scdn.co/image/ab67616100005174fcba0c2d9ab9a8597b273ce5",
+        "width": 320
+      },
+      {
+        "height": 160,
+        "url": "https://i.scdn.co/image/ab6761610000f178fcba0c2d9ab9a8597b273ce5",
+        "width": 160
+      }
+    ],
+    "name": "Wolpis Carter",
+    "popularity": 39,
+    "type": "artist",
+    "uri": "spotify:artist:5gBtcJIa6ZLJB1HUwfik4J"
+  },
+  {
+    "external_urls": {
+      "spotify": "https://open.spotify.com/artist/64tJ2EAv1R6UaZqc4iOCyj"
+    },
+    "followers": {
+      "href": null,
+      "total": 5567768
+    },
+    "genres": [
+      "j-pop",
+      "japanese teen pop"
+    ],
+    "href": "https://api.spotify.com/v1/artists/64tJ2EAv1R6UaZqc4iOCyj",
+    "id": "64tJ2EAv1R6UaZqc4iOCyj",
+    "images": [
+      {
+        "height": 640,
+        "url": "https://i.scdn.co/image/ab6761610000e5ebfbe071f5bc42f38d3485a29a",
+        "width": 640
+      },
+      {
+        "height": 320,
+        "url": "https://i.scdn.co/image/ab67616100005174fbe071f5bc42f38d3485a29a",
+        "width": 320
+      },
+      {
+        "height": 160,
+        "url": "https://i.scdn.co/image/ab6761610000f178fbe071f5bc42f38d3485a29a",
+        "width": 160
+      }
+    ],
+    "name": "YOASOBI",
+    "popularity": 79,
+    "type": "artist",
+    "uri": "spotify:artist:64tJ2EAv1R6UaZqc4iOCyj"
+  },
+  {
+    "external_urls": {
+      "spotify": "https://open.spotify.com/artist/3i7tuzRfutJGAUowspOM1f"
+    },
+    "followers": {
+      "href": null,
+      "total": 76937
+    },
+    "genres": [
+      "anime rock"
+    ],
+    "href": "https://api.spotify.com/v1/artists/3i7tuzRfutJGAUowspOM1f",
+    "id": "3i7tuzRfutJGAUowspOM1f",
+    "images": [
+      {
+        "height": 640,
+        "url": "https://i.scdn.co/image/ab6761610000e5eb4111b1cba48ba33c6b98e7bf",
+        "width": 640
+      },
+      {
+        "height": 320,
+        "url": "https://i.scdn.co/image/ab676161000051744111b1cba48ba33c6b98e7bf",
+        "width": 320
+      },
+      {
+        "height": 160,
+        "url": "https://i.scdn.co/image/ab6761610000f1784111b1cba48ba33c6b98e7bf",
+        "width": 160
+      }
+    ],
+    "name": "Kashitaro Ito",
+    "popularity": 38,
+    "type": "artist",
+    "uri": "spotify:artist:3i7tuzRfutJGAUowspOM1f"
+  },
+  {
+    "external_urls": {
       "spotify": "https://open.spotify.com/artist/3O0kLS5sLZ41XZRxjBKmLF"
     },
     "followers": {
       "href": null,
-      "total": 182647
+      "total": 183372
     },
     "genres": [
       "anime",
@@ -738,189 +771,11 @@
   },
   {
     "external_urls": {
-      "spotify": "https://open.spotify.com/artist/6pU8o91xAS0aWNjj06nQSU"
-    },
-    "followers": {
-      "href": null,
-      "total": 84723
-    },
-    "genres": [
-      "k-pop",
-      "korean pop"
-    ],
-    "href": "https://api.spotify.com/v1/artists/6pU8o91xAS0aWNjj06nQSU",
-    "id": "6pU8o91xAS0aWNjj06nQSU",
-    "images": [
-      {
-        "height": 640,
-        "url": "https://i.scdn.co/image/ab67616d0000b273a153641a9a5266c40757f5b7",
-        "width": 640
-      },
-      {
-        "height": 300,
-        "url": "https://i.scdn.co/image/ab67616d00001e02a153641a9a5266c40757f5b7",
-        "width": 300
-      },
-      {
-        "height": 64,
-        "url": "https://i.scdn.co/image/ab67616d00004851a153641a9a5266c40757f5b7",
-        "width": 64
-      }
-    ],
-    "name": "Kassy",
-    "popularity": 47,
-    "type": "artist",
-    "uri": "spotify:artist:6pU8o91xAS0aWNjj06nQSU"
-  },
-  {
-    "external_urls": {
-      "spotify": "https://open.spotify.com/artist/1MMwG2KB8SZB9xvvJoXUwQ"
-    },
-    "followers": {
-      "href": null,
-      "total": 5439
-    },
-    "genres": [],
-    "href": "https://api.spotify.com/v1/artists/1MMwG2KB8SZB9xvvJoXUwQ",
-    "id": "1MMwG2KB8SZB9xvvJoXUwQ",
-    "images": [
-      {
-        "height": 640,
-        "url": "https://i.scdn.co/image/ab6761610000e5eb9e0266b9911a991d12f22ec4",
-        "width": 640
-      },
-      {
-        "height": 320,
-        "url": "https://i.scdn.co/image/ab676161000051749e0266b9911a991d12f22ec4",
-        "width": 320
-      },
-      {
-        "height": 160,
-        "url": "https://i.scdn.co/image/ab6761610000f1789e0266b9911a991d12f22ec4",
-        "width": 160
-      }
-    ],
-    "name": "YO_CO",
-    "popularity": 40,
-    "type": "artist",
-    "uri": "spotify:artist:1MMwG2KB8SZB9xvvJoXUwQ"
-  },
-  {
-    "external_urls": {
-      "spotify": "https://open.spotify.com/artist/1vgwCsZx2um1wmTgP5EkZj"
-    },
-    "followers": {
-      "href": null,
-      "total": 26984
-    },
-    "genres": [
-      "japanese alternative rock"
-    ],
-    "href": "https://api.spotify.com/v1/artists/1vgwCsZx2um1wmTgP5EkZj",
-    "id": "1vgwCsZx2um1wmTgP5EkZj",
-    "images": [
-      {
-        "height": 640,
-        "url": "https://i.scdn.co/image/ab6761610000e5eb7ec8cac66fd6525e07a7e456",
-        "width": 640
-      },
-      {
-        "height": 320,
-        "url": "https://i.scdn.co/image/ab676161000051747ec8cac66fd6525e07a7e456",
-        "width": 320
-      },
-      {
-        "height": 160,
-        "url": "https://i.scdn.co/image/ab6761610000f1787ec8cac66fd6525e07a7e456",
-        "width": 160
-      }
-    ],
-    "name": "Hakubi",
-    "popularity": 32,
-    "type": "artist",
-    "uri": "spotify:artist:1vgwCsZx2um1wmTgP5EkZj"
-  },
-  {
-    "external_urls": {
-      "spotify": "https://open.spotify.com/artist/6TNooB9HDJ9Xs1GFPl2Fiv"
-    },
-    "followers": {
-      "href": null,
-      "total": 184423
-    },
-    "genres": [
-      "j-pixie",
-      "j-pop",
-      "j-rock",
-      "japanese alternative rock"
-    ],
-    "href": "https://api.spotify.com/v1/artists/6TNooB9HDJ9Xs1GFPl2Fiv",
-    "id": "6TNooB9HDJ9Xs1GFPl2Fiv",
-    "images": [
-      {
-        "height": 640,
-        "url": "https://i.scdn.co/image/ab6761610000e5ebe3db8c701961a20bef8f9256",
-        "width": 640
-      },
-      {
-        "height": 320,
-        "url": "https://i.scdn.co/image/ab67616100005174e3db8c701961a20bef8f9256",
-        "width": 320
-      },
-      {
-        "height": 160,
-        "url": "https://i.scdn.co/image/ab6761610000f178e3db8c701961a20bef8f9256",
-        "width": 160
-      }
-    ],
-    "name": "SHE'S",
-    "popularity": 46,
-    "type": "artist",
-    "uri": "spotify:artist:6TNooB9HDJ9Xs1GFPl2Fiv"
-  },
-  {
-    "external_urls": {
-      "spotify": "https://open.spotify.com/artist/6HX4Jrnb0WhEv9goeGoh6p"
-    },
-    "followers": {
-      "href": null,
-      "total": 204280
-    },
-    "genres": [
-      "anime rock",
-      "j-pixie"
-    ],
-    "href": "https://api.spotify.com/v1/artists/6HX4Jrnb0WhEv9goeGoh6p",
-    "id": "6HX4Jrnb0WhEv9goeGoh6p",
-    "images": [
-      {
-        "height": 640,
-        "url": "https://i.scdn.co/image/ab6761610000e5eb611c3ed4b24306d995a4217f",
-        "width": 640
-      },
-      {
-        "height": 320,
-        "url": "https://i.scdn.co/image/ab67616100005174611c3ed4b24306d995a4217f",
-        "width": 320
-      },
-      {
-        "height": 160,
-        "url": "https://i.scdn.co/image/ab6761610000f178611c3ed4b24306d995a4217f",
-        "width": 160
-      }
-    ],
-    "name": "majiko",
-    "popularity": 50,
-    "type": "artist",
-    "uri": "spotify:artist:6HX4Jrnb0WhEv9goeGoh6p"
-  },
-  {
-    "external_urls": {
       "spotify": "https://open.spotify.com/artist/5pjjlQXYjoMFWdjdKOre9s"
     },
     "followers": {
       "href": null,
-      "total": 147734
+      "total": 148098
     },
     "genres": [
       "anime",
@@ -953,11 +808,150 @@
   },
   {
     "external_urls": {
+      "spotify": "https://open.spotify.com/artist/5uKsm1jCkFYftiMNBIYyCv"
+    },
+    "followers": {
+      "href": null,
+      "total": 2231
+    },
+    "genres": [],
+    "href": "https://api.spotify.com/v1/artists/5uKsm1jCkFYftiMNBIYyCv",
+    "id": "5uKsm1jCkFYftiMNBIYyCv",
+    "images": [
+      {
+        "height": 640,
+        "url": "https://i.scdn.co/image/ab67616d0000b27304c5d598c9904d6264dad755",
+        "width": 640
+      },
+      {
+        "height": 300,
+        "url": "https://i.scdn.co/image/ab67616d00001e0204c5d598c9904d6264dad755",
+        "width": 300
+      },
+      {
+        "height": 64,
+        "url": "https://i.scdn.co/image/ab67616d0000485104c5d598c9904d6264dad755",
+        "width": 64
+      }
+    ],
+    "name": "Euluca Lab.",
+    "popularity": 25,
+    "type": "artist",
+    "uri": "spotify:artist:5uKsm1jCkFYftiMNBIYyCv"
+  },
+  {
+    "external_urls": {
+      "spotify": "https://open.spotify.com/artist/3sE3971KYAw7t9ENx8Eqwk"
+    },
+    "followers": {
+      "href": null,
+      "total": 41166
+    },
+    "genres": [
+      "j-poprock"
+    ],
+    "href": "https://api.spotify.com/v1/artists/3sE3971KYAw7t9ENx8Eqwk",
+    "id": "3sE3971KYAw7t9ENx8Eqwk",
+    "images": [
+      {
+        "height": 640,
+        "url": "https://i.scdn.co/image/ab6761610000e5eb8ae8d1665469f05671d04b50",
+        "width": 640
+      },
+      {
+        "height": 320,
+        "url": "https://i.scdn.co/image/ab676161000051748ae8d1665469f05671d04b50",
+        "width": 320
+      },
+      {
+        "height": 160,
+        "url": "https://i.scdn.co/image/ab6761610000f1788ae8d1665469f05671d04b50",
+        "width": 160
+      }
+    ],
+    "name": "Who-ya Extended",
+    "popularity": 46,
+    "type": "artist",
+    "uri": "spotify:artist:3sE3971KYAw7t9ENx8Eqwk"
+  },
+  {
+    "external_urls": {
+      "spotify": "https://open.spotify.com/artist/4KtWUs76w4g6Ck12wskjeg"
+    },
+    "followers": {
+      "href": null,
+      "total": 50466
+    },
+    "genres": [
+      "anime"
+    ],
+    "href": "https://api.spotify.com/v1/artists/4KtWUs76w4g6Ck12wskjeg",
+    "id": "4KtWUs76w4g6Ck12wskjeg",
+    "images": [
+      {
+        "height": 640,
+        "url": "https://i.scdn.co/image/ab6761610000e5eb0e5e298283e222721316827e",
+        "width": 640
+      },
+      {
+        "height": 320,
+        "url": "https://i.scdn.co/image/ab676161000051740e5e298283e222721316827e",
+        "width": 320
+      },
+      {
+        "height": 160,
+        "url": "https://i.scdn.co/image/ab6761610000f1780e5e298283e222721316827e",
+        "width": 160
+      }
+    ],
+    "name": "\u85e4\u5ddd\u5343\u611b",
+    "popularity": 42,
+    "type": "artist",
+    "uri": "spotify:artist:4KtWUs76w4g6Ck12wskjeg"
+  },
+  {
+    "external_urls": {
+      "spotify": "https://open.spotify.com/artist/6HX4Jrnb0WhEv9goeGoh6p"
+    },
+    "followers": {
+      "href": null,
+      "total": 204925
+    },
+    "genres": [
+      "anime rock",
+      "j-pixie"
+    ],
+    "href": "https://api.spotify.com/v1/artists/6HX4Jrnb0WhEv9goeGoh6p",
+    "id": "6HX4Jrnb0WhEv9goeGoh6p",
+    "images": [
+      {
+        "height": 640,
+        "url": "https://i.scdn.co/image/ab6761610000e5eb611c3ed4b24306d995a4217f",
+        "width": 640
+      },
+      {
+        "height": 320,
+        "url": "https://i.scdn.co/image/ab67616100005174611c3ed4b24306d995a4217f",
+        "width": 320
+      },
+      {
+        "height": 160,
+        "url": "https://i.scdn.co/image/ab6761610000f178611c3ed4b24306d995a4217f",
+        "width": 160
+      }
+    ],
+    "name": "majiko",
+    "popularity": 50,
+    "type": "artist",
+    "uri": "spotify:artist:6HX4Jrnb0WhEv9goeGoh6p"
+  },
+  {
+    "external_urls": {
       "spotify": "https://open.spotify.com/artist/1CWmF1EcrKoWIbZt9Ivfg2"
     },
     "followers": {
       "href": null,
-      "total": 340302
+      "total": 341082
     },
     "genres": [
       "anime",
@@ -990,105 +984,40 @@
   },
   {
     "external_urls": {
-      "spotify": "https://open.spotify.com/artist/4KtWUs76w4g6Ck12wskjeg"
+      "spotify": "https://open.spotify.com/artist/6TNooB9HDJ9Xs1GFPl2Fiv"
     },
     "followers": {
       "href": null,
-      "total": 49039
+      "total": 184780
     },
     "genres": [
-      "anime"
+      "j-pixie",
+      "j-pop",
+      "j-rock",
+      "japanese alternative rock"
     ],
-    "href": "https://api.spotify.com/v1/artists/4KtWUs76w4g6Ck12wskjeg",
-    "id": "4KtWUs76w4g6Ck12wskjeg",
+    "href": "https://api.spotify.com/v1/artists/6TNooB9HDJ9Xs1GFPl2Fiv",
+    "id": "6TNooB9HDJ9Xs1GFPl2Fiv",
     "images": [
       {
         "height": 640,
-        "url": "https://i.scdn.co/image/ab6761610000e5eb0e5e298283e222721316827e",
+        "url": "https://i.scdn.co/image/ab6761610000e5ebe3db8c701961a20bef8f9256",
         "width": 640
       },
       {
         "height": 320,
-        "url": "https://i.scdn.co/image/ab676161000051740e5e298283e222721316827e",
+        "url": "https://i.scdn.co/image/ab67616100005174e3db8c701961a20bef8f9256",
         "width": 320
       },
       {
         "height": 160,
-        "url": "https://i.scdn.co/image/ab6761610000f1780e5e298283e222721316827e",
+        "url": "https://i.scdn.co/image/ab6761610000f178e3db8c701961a20bef8f9256",
         "width": 160
       }
     ],
-    "name": "\u85e4\u5ddd\u5343\u611b",
-    "popularity": 42,
+    "name": "SHE'S",
+    "popularity": 46,
     "type": "artist",
-    "uri": "spotify:artist:4KtWUs76w4g6Ck12wskjeg"
-  },
-  {
-    "external_urls": {
-      "spotify": "https://open.spotify.com/artist/5uKsm1jCkFYftiMNBIYyCv"
-    },
-    "followers": {
-      "href": null,
-      "total": 2186
-    },
-    "genres": [],
-    "href": "https://api.spotify.com/v1/artists/5uKsm1jCkFYftiMNBIYyCv",
-    "id": "5uKsm1jCkFYftiMNBIYyCv",
-    "images": [
-      {
-        "height": 640,
-        "url": "https://i.scdn.co/image/ab67616d0000b27304c5d598c9904d6264dad755",
-        "width": 640
-      },
-      {
-        "height": 300,
-        "url": "https://i.scdn.co/image/ab67616d00001e0204c5d598c9904d6264dad755",
-        "width": 300
-      },
-      {
-        "height": 64,
-        "url": "https://i.scdn.co/image/ab67616d0000485104c5d598c9904d6264dad755",
-        "width": 64
-      }
-    ],
-    "name": "Euluca Lab.",
-    "popularity": 25,
-    "type": "artist",
-    "uri": "spotify:artist:5uKsm1jCkFYftiMNBIYyCv"
-  },
-  {
-    "external_urls": {
-      "spotify": "https://open.spotify.com/artist/35AeYLIKrorZDAxsb40vVZ"
-    },
-    "followers": {
-      "href": null,
-      "total": 94668
-    },
-    "genres": [
-      "j-poprock"
-    ],
-    "href": "https://api.spotify.com/v1/artists/35AeYLIKrorZDAxsb40vVZ",
-    "id": "35AeYLIKrorZDAxsb40vVZ",
-    "images": [
-      {
-        "height": 640,
-        "url": "https://i.scdn.co/image/ab6761610000e5eb3d4969dea314f9055e5aec4b",
-        "width": 640
-      },
-      {
-        "height": 320,
-        "url": "https://i.scdn.co/image/ab676161000051743d4969dea314f9055e5aec4b",
-        "width": 320
-      },
-      {
-        "height": 160,
-        "url": "https://i.scdn.co/image/ab6761610000f1783d4969dea314f9055e5aec4b",
-        "width": 160
-      }
-    ],
-    "name": "\u30e9\u30c3\u30af\u30e9\u30a4\u30d5",
-    "popularity": 49,
-    "type": "artist",
-    "uri": "spotify:artist:35AeYLIKrorZDAxsb40vVZ"
+    "uri": "spotify:artist:6TNooB9HDJ9Xs1GFPl2Fiv"
   }
 ]

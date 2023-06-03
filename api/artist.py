@@ -35,5 +35,5 @@ for id in artist_ids:
     artist_json.append(artist_resp)
 
 # Save outout as json file to go parse later...
-with open('../data/raw_artists.json', 'w') as outfile:
+with open('./data/raw_artists.json', 'w') as outfile:
     json.dump(artist_json, outfile, indent=2)
