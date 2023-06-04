@@ -5,6 +5,7 @@ Reference:
 - [Spotify REST API Documentation](https://developer.spotify.com/documentation/web-api/tutorials/getting-started#create-an-app)
 - [User's top track endpoint](https://developer.spotify.com/documentation/web-api/reference/get-users-top-artists-and-tracks)
 - [Get Artist endpoint](https://developer.spotify.com/documentation/web-api/reference/get-an-artist)
+- [Get Album endpoint](https://developer.spotify.com/documentation/web-api/reference/get-an-album)
 
 ## Purpose
 Invoke an API endpoint to get json data of your most listened tracks. Then visualize that in whatever BI tools for some analysis. My initial use case was just listing it out in a table. <i>Why?</i> It's useful for when going for a karaoke marathon where you can just queue up all the songs based on what you have in the list 🎤
