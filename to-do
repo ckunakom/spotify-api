@@ -1,0 +1,15 @@
+Leave no stones unturned:
+
+https://developer.spotify.com/documentation/web-api/reference/get-an-album
+- Get the album image and genre from the following (throw a loop like artists.py or something)
+- Will need album id from top_tracks 
+- Response data: id, images (maybe same quality from top_tracks, but get it anyway since already there), 
+genre, album_type, total_tracks, external_urls, release_date
+
+Oh god... update data cleaning too.
+- Will have to redo the pd.merge to not use the artist....or do i...?
+- Currently genre is associated with just artists not tracks. So if the track is in different genre, it still uses genre based on the artist.
+- Use album genre since that's what the track is associated with and will be more accurate when doing stats on top genres.
+- Go figure it out how to replace artist genre with album genre!
+
+Would love it if tableau doesn't need to be updated.....
